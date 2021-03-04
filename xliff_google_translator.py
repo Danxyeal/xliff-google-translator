@@ -82,5 +82,9 @@ for g_tag in source_soup.find_all('g'):
 write_file(str(source_soup), 'done_' + TARGET + '_' + FILENAME + EXT)
 
 # TODO
-- package up
--
+# - package up
+# - separate concerns and move code into main function
+'''
+if __name__ == '__main__':
+    main()
+'''
