@@ -51,17 +51,17 @@ else:
 source_soup = BeautifulSoup(source_file, 'xml')
 target_soup = BeautifulSoup(target_file, 'xml')
 
-stu = source_soup.find_all('trans-unit')
-ttu = target_soup.find_all('trans-unit')
-ttu_str = [tu.source.contents for tu in ttu]
+source_trans_units = source_soup.find_all('trans-unit')
+target_trans_units = target_soup.find_all('trans-unit')
+ttu_str = [trans_unit.source.contents for trans_unit in target_trans_units]
 
-target_gen = (target for target in ttu)
+target_gen = (target for target in target_trans_units)
 print('XLIFF file name', FILENAME)
-print(len(stu), 'source trans-units and', len(ttu), 'targets')
+print(len(source_trans_units), 'source trans-units and', len(target_trans_units), 'targets')
 print('Word count:', len(target_soup.get_text().split()))
 #print(target_soup.get_text().split())
 
-for tu in stu:
+for tu in source_trans_units:
     target_element = next(target_gen).source
     target_element.name = 'target'
     tu.source.insert_after(target_element)
@@ -82,24 +82,5 @@ for g_tag in source_soup.find_all('g'):
 write_file(str(source_soup), 'done_' + TARGET + '_' + FILENAME + EXT)
 
 # TODO
-#  - strip the strings inside nested <g> tags
-#  - add target-language="fr" attribute to <file> tags
-#  - fix HTML encoded angle bracket problem
-'''
-for tu in stu:
-    target_element = source_soup.new_tag("target")
-    e = next(target_gen)
-    target_element.string = str(e)
-    tu.source.insert_after(target_element)
-
-for tu in stu:
-    target_element = source_soup.new_tag("target")
-    target_content = ''
-    print(next(target_gen).source)
-    for child in next(target_gen).source.children:
-        if child:
-            target_content = target_content + str(child)
-    target_element.string = target_content.strip()
-    tu.source.insert_after(target_element)
-
-'''
+- package up
+-
