@@ -25,3 +25,6 @@ This tool is in early stage of development. Please see the Google Cloud Translat
 # TODO
 - Setup dotenv to create environment variable: GOOGLE_APPLICATION_CREDENTIALS to point to location of google-service-account.json file
 - Update to token
+- Separate concerns in the code
+# Feature Requests
+Add batch processing functionality
