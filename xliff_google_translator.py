@@ -29,15 +29,21 @@ def write_file(source_with_target_str, file_name):
 from bs4 import BeautifulSoup
 import bs4
 import os.path
+import sys
 
-FILENAME = 'en-zh-06'
-TARGET = 'zh'
-EXT = '.xlf'
+TARGET = sys.argv[1]
+FILENAME = sys.argv[2]
 
-target_filename = TARGET + '_' + FILENAME + EXT
+target_filename = TARGET + '_' + FILENAME
 
-with open(FILENAME + EXT) as f:
-    source_file = f.read()
+try:
+    with open(FILENAME) as f:
+        source_file = f.read()
+except IOError:
+    print('\nCommand should look like this: \n$ ~ python xliff-google-translator.py <target language eg. fr for French, zh for Chinese> <filename.xlf>')
+    print(f'File {FILENAME} not found. Please put the file in the same directory as the script, check the name, include the extension, and try again')
+    print('Exiting program\n')
+    exit()
 
 if os.path.isfile(target_filename):
     print ("Translation file exists...Opening")
