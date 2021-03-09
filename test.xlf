@@ -1,0 +1,14 @@
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" version="1.2">
+    <file original="course" datatype="plaintext" source-language="en-US">
+        <body>
+            <trans-unit id="title">
+                <source>XLIFF Google Translator Test XLF</source>
+            </trans-unit>
+            <trans-unit id="description">
+                <source>
+                    <g id="LbL05Ylo36rV3Vp0" ctype="x-html-p">Thank you for having a look at this script. This is a test file. So you can safely test without costing yourself a lot of Google Cloud credits</g>
+                </source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

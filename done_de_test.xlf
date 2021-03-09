@@ -1,0 +1,12 @@
+<html><body><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+<file datatype="plaintext" original="course" source-language="en-US" target-language="de">
+<trans-unit id="title">
+<source>XLIFF Google Translator Test XLF</source><target>XLIFF Google Übersetzertest XLF</target>
+</trans-unit>
+<trans-unit id="description">
+<source>
+<g ctype="x-html-p" id="LbL05Ylo36rV3Vp0">Thank you for having a look at this script. This is a test file. So you can safely test without costing yourself a lot of Google Cloud credits</g>
+</source><target>Vielen Dank, dass Sie sich dieses Skript angesehen haben. Dies ist eine Testdatei. So können Sie sicher testen, ohne sich viel Google Cloud-Guthaben zu kosten</target>
+</trans-unit>
+</file>
+</xliff></body></html>

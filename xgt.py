@@ -1,3 +1,9 @@
+from bs4 import BeautifulSoup
+import bs4
+import lxml
+import os.path
+import sys
+
 def translate_text(target, text):
     """Translates text into the target language.
 
@@ -26,11 +32,6 @@ def write_file(source_with_target_str, filename):
     xliff_output.write(source_with_target_str)
     xliff_output.close()
 
-from bs4 import BeautifulSoup
-import bs4
-import os.path
-import sys
-
 def main():
     TARGET = sys.argv[1]
     FILENAME = sys.argv[2]
@@ -54,8 +55,8 @@ def main():
         target_file = translate_text(TARGET, source_file)
         write_file(target_file, target_filename)
 
-    source_soup = BeautifulSoup(source_file, 'xml')
-    target_soup = BeautifulSoup(target_file, 'xml')
+    source_soup = BeautifulSoup(source_file, 'lxml')
+    target_soup = BeautifulSoup(target_file, 'lxml')
 
     source_trans_units = source_soup.find_all('trans-unit')
     target_trans_units = target_soup.find_all('trans-unit')
@@ -84,7 +85,7 @@ def main():
             g_tag.string = g_tag.string.strip()
     '''
 
-    write_file(str(source_soup), 'done_' + TARGET + '_' + FILENAME + EXT)
+    write_file(str(source_soup), 'done_' + TARGET + '_' + FILENAME)
 
 
 if __name__ == '__main__':
